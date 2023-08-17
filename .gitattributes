@@ -1,0 +1,2 @@
+# 拡張子が.jsonのファイルは改行コードをLFに設定
+*.json      text eol=lf

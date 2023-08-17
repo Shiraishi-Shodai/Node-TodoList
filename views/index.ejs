@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- publicディレクトリ内のファイルを指定する時は、publicから下のパスを指定 -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <h1>TodoList</h1>
+
+    <% if (typeof error !== 'undefined' && error!= null) { %>
+        <p class="error"><%= error %></p>
+    <% } %>
+    <form action="" method="post">
+        <input type="text" name="name">
+        <button type="submit" name="b" value="insert">insert</button>
+        <button type="submit" name="b" value="delete">delete</button>
+
+        <div class="todos">
+            <% if (typeof data !== "undefined") { %>
+                <% data.forEach(function (value, key) { %>
+                    <label for=<%= key %>></label>
+                    <input type="checkbox" name="todo" id=<%= value %> value=<%= value %>><%= value %><br>
+                <% }); %>
+            <% } %>
+        </div>
+    </form>
+    
+    
+</body>
+</html>
